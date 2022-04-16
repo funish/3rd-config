@@ -1,0 +1,58 @@
+{
+  "name": "@funish/stylelint-config",
+  "version": "0.0.0",
+  "description": "Shared stylelint configuration, powered by Funish.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Funish/lint-module.git"
+  },
+  "keywords": [
+    "lint",
+    "stylelint",
+    "stylelintconfig",
+    "stylelint-config"
+  ],
+  "author": {
+    "name": "Funish",
+    "email": "official@funish.net",
+    "url": "https://funish.net/"
+  },
+  "contributors": [
+    {
+      "name": "Demo Macro",
+      "email": "abc@imst.xyz",
+      "url": "https://imst.xyz/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Funish/lint-module/issues"
+  },
+  "homepage": "https://github.com/Funish/lint-module#readme",
+  "devDependencies": {
+    "postcss": ">=0.36.2",
+    "postcss-syntax": ">=0.36.2",
+    "prettier": ">=2.0.0",
+    "stylelint": ">=14.4.0 <15.0.0"
+  },
+  "peerDependencies": {
+    "postcss": ">=0.36.2",
+    "postcss-syntax": ">=0.36.2",
+    "prettier": ">=2.0.0",
+    "stylelint": ">=14.4.0 <15.0.0"
+  },
+  "dependencies": {
+    "@stylelint/postcss-css-in-js": "^0.37.2",
+    "postcss-html": "^1.3.1",
+    "postcss-markdown": "^1.2.0",
+    "postcss-scss": "^4.0.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-prettier": "^2.0.0"
+  }
+}

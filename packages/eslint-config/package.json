@@ -1,0 +1,54 @@
+{
+  "name": "@funish/eslint-config",
+  "version": "0.0.0",
+  "description": "Shared eslint configuration, powered by Funish.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Funish/lint-module.git"
+  },
+  "keywords": [
+    "lint",
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "author": {
+    "name": "Funish",
+    "email": "official@funish.net",
+    "url": "https://funish.net/"
+  },
+  "contributors": [
+    {
+      "name": "Demo Macro",
+      "email": "abc@imst.xyz",
+      "url": "https://imst.xyz/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Funish/lint-module/issues"
+  },
+  "homepage": "https://github.com/Funish/lint-module#readme",
+  "devDependencies": {
+    "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <9.0.0",
+    "prettier": ">=2.0.0",
+    "typescript": ">=2.8.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <9.0.0",
+    "prettier": ">=2.0.0",
+    "typescript": ">=2.8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.6.0"
+  }
+}

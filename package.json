@@ -1,0 +1,61 @@
+{
+  "name": "@funish/lint-module",
+  "version": "0.0.0",
+  "description": "The Lint tool chain designed for specification, powered by Funish.",
+  "scripts": {
+    "build": "unbuild",
+    "lint:js": "eslint --ext \".js,.jsx,.ts,.tsx,.svelte,.vue\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{css,scss,js,jsx,tsx,html,svelte,vue,md}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check . --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . --ignore-path .gitignore && yarn lint:js --fix && yarn lint:style --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,svelte,vue}": "eslint --cache",
+    "*.{css,scss,js,jsx,tsx,html,svelte,vue,md}": "stylelint",
+    "*.**": "prettier --check --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Funish/lint-module.git"
+  },
+  "keywords": [
+    "lint",
+    "linter",
+    "eslint",
+    "stylelint",
+    "webhint",
+    "prettier",
+    "commitlint",
+    "lint-staged"
+  ],
+  "author": {
+    "name": "Funish",
+    "email": "official@funish.net",
+    "url": "https://funish.net/"
+  },
+  "contributors": [
+    {
+      "name": "Demo Macro",
+      "email": "abc@imst.xyz",
+      "url": "https://imst.xyz/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Funish/lint-module/issues"
+  },
+  "homepage": "https://github.com/Funish/lint-module#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@funish/eslint-config": "^0.0.0",
+    "@funish/stylelint-config": "^0.0.0",
+    "@types/eslint": "^8.4.1",
+    "@types/node": "^17.0.23",
+    "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <9.0.0",
+    "lint-staged": "^12.3.8",
+    "stylelint": ">=14.4.0 <15.0.0",
+    "unbuild": "^0.7.2"
+  }
+}
