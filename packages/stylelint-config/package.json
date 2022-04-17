@@ -6,7 +6,9 @@
   "files": [
     "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "unbuild"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Funish/lint-module.git"
