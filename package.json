@@ -2,8 +2,9 @@
   "name": "@funish/lint-module",
   "version": "0.0.0",
   "description": "The Lint tool chain designed for specification, powered by Funish.",
+  "private": "true",
   "scripts": {
-    "prepublish": "pnpm -r build",
+    "build": "pnpm -r build",
     "lint:js": "eslint --ext \".js,.jsx,.ts,.tsx,.svelte,.vue\" --ignore-path .gitignore",
     "lint:style": "stylelint \"**/*.{css,scss,js,jsx,tsx,html,svelte,vue,md}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check . --ignore-path .gitignore",

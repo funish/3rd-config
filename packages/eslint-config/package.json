@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild"
+    "prepublish": "unbuild"
   },
   "repository": {
     "type": "git",
