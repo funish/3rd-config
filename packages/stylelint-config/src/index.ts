@@ -3,10 +3,35 @@ import type { Config } from "stylelint";
 export type defineStylelintConfig = Config;
 
 const stylelintConfig: defineStylelintConfig = {
-  plugins: ["stylelint-prettier"],
-  extends: ["stylelint-config-standard", "stylelint-config-prettier"],
+  extends: ["stylelint-config-standard", "stylelint-prettier/recommended"],
   rules: {
-    "prettier/prettier": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: [
+          "at-root",
+          "content",
+          "debug",
+          "each",
+          "else",
+          "else if",
+          "error",
+          "extend",
+          "for",
+          "forward",
+          "function",
+          "if",
+          "import",
+          "include",
+          "media",
+          "mixin",
+          "return",
+          "use",
+          "warn",
+          "while",
+        ],
+      },
+    ],
   },
   overrides: [
     {
@@ -18,7 +43,7 @@ const stylelintConfig: defineStylelintConfig = {
       customSyntax: "@stylelint/postcss-css-in-js",
     },
     {
-      files: ["**/*.{html,svelte,vue}"],
+      files: ["**/*.{html,vue}"],
       customSyntax: "postcss-html",
     },
     {
