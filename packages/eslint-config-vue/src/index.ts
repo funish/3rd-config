@@ -3,22 +3,16 @@ import { Linter } from "eslint";
 export type defineEslintConfig = Linter.Config;
 
 const eslintConfig: defineEslintConfig = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:vue/vue3-essential",
+    "@vue/eslint-config-typescript/recommended",
+    "@vue/eslint-config-prettier",
   ],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint"],
 };
 
 module.exports = eslintConfig;

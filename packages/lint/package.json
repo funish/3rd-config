@@ -1,0 +1,49 @@
+{
+  "name": "@funish/lint",
+  "version": "0.0.0",
+  "description": "Integrated one-click Linter, powered by Funish.",
+  "main": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "lint": "bin/lint.mjs"
+  },
+  "scripts": {
+    "prepack": "unbuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Funish/lint-module.git"
+  },
+  "keywords": [
+    "lint",
+    "linter",
+    "eslint",
+    "stylelint",
+    "prettier",
+    "commitlint",
+    "lint-staged"
+  ],
+  "author": {
+    "name": "Funish",
+    "email": "official@funish.net",
+    "url": "https://funish.net/"
+  },
+  "contributors": [
+    {
+      "name": "Demo Macro",
+      "email": "abc@imst.xyz",
+      "url": "https://imst.xyz/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Funish/lint-module/issues"
+  },
+  "homepage": "https://github.com/Funish/lint-module#readme",
+  "dependencies": {
+    "cac": "^6.7.12",
+    "consola": "^2.15.3"
+  }
+}

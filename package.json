@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm -r build",
     "lint:js": "eslint --ext \".js,.jsx,.ts,.tsx,.vue\" --ignore-path .gitignore",
-    "lint:style": "stylelint \"**/*.{css,scss,js,jsx,tsx,html,vue,md}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{css,sass,scss,html,vue,md}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check . --ignore-path .gitignore",
     "lint": "pnpm lint:js && pnpm lint:style && pnpm lint:prettier",
     "lintfix": "prettier --write --list-different . --ignore-path .gitignore && pnpm lint:js --fix && pnpm lint:style --fix"
@@ -25,7 +25,6 @@
     "linter",
     "eslint",
     "stylelint",
-    "webhint",
     "prettier",
     "commitlint",
     "lint-staged"

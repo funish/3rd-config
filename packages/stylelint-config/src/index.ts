@@ -35,12 +35,8 @@ const stylelintConfig: defineStylelintConfig = {
   },
   overrides: [
     {
-      files: ["**/*.scss"],
-      customSyntax: "postcss-scss",
-    },
-    {
-      files: ["**/*.{js,jsx,tsx}"],
-      customSyntax: "@stylelint/postcss-css-in-js",
+      files: ["**/*.{sass,scss}"],
+      customSyntax: "@csstools/postcss-sass",
     },
     {
       files: ["**/*.{html,vue}"],
