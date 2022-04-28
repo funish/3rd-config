@@ -1,13 +1,13 @@
 {
   "name": "@funish/eslint-config-vue",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "Shared eslint configuration specifically for vue, powered by Funish.",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepack": "unbuild"
   },
   "repository": {
     "type": "git",
