@@ -4,7 +4,7 @@
   "description": "The Lint tool chain designed for specification, powered by Funish.",
   "private": "true",
   "scripts": {
-    "build": "pnpm -r build",
+    "build": "pnpm -r prepack",
     "lint:js": "eslint --ext \".js,.jsx,.ts,.tsx,.vue\" --ignore-path .gitignore",
     "lint:style": "stylelint \"**/*.{css,sass,scss,html,vue,md}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check . --ignore-path .gitignore",
