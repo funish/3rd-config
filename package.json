@@ -10,7 +10,7 @@
     "lint:prettier": "prettier --check . --ignore-path .gitignore",
     "lint": "pnpm lint:js && pnpm lint:style && pnpm lint:prettier",
     "lintfix": "prettier --write --list-different . --ignore-path .gitignore && pnpm lint:js --fix && pnpm lint:style --fix",
-    "postinstall": "hooks install"
+    "postinstall": "githooks install"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --cache",
@@ -48,8 +48,8 @@
   },
   "homepage": "https://github.com/Funish/lint-module#readme",
   "devDependencies": {
-    "@commitlint/cli": "16.3.0",
-    "@commitlint/config-conventional": "16.2.4",
+    "@commitlint/cli": "17.0.0",
+    "@commitlint/config-conventional": "17.0.0",
     "@funish/eslint-config": "workspace:^",
     "@funish/githooks": "0.0.2-3",
     "@funish/stylelint-config": "workspace:^",
