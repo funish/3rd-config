@@ -48,8 +48,8 @@
   },
   "homepage": "https://github.com/Funish/lint-module#readme",
   "devDependencies": {
-    "@commitlint/cli": "17.0.0",
-    "@commitlint/config-conventional": "17.0.0",
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-conventional": "17.0.2",
     "@funish/eslint-config": "workspace:^",
     "@funish/githooks": "0.0.2-3",
     "@funish/stylelint-config": "workspace:^",
