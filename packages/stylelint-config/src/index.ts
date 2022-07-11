@@ -1,8 +1,6 @@
 import type { Config } from "stylelint";
 
-export type defineStylelintConfig = Config;
-
-const stylelintConfig: defineStylelintConfig = {
+const stylelintConfig: Config = {
   extends: ["stylelint-config-standard", "stylelint-prettier/recommended"],
   rules: {
     "at-rule-no-unknown": [
@@ -49,4 +47,4 @@ const stylelintConfig: defineStylelintConfig = {
   ],
 };
 
-module.exports = stylelintConfig;
+export default stylelintConfig;

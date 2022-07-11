@@ -1,11 +1,9 @@
 import { Linter } from "eslint";
 
-export type defineEslintConfig = Linter.Config;
-
-const eslintConfig: defineEslintConfig = {
+const eslintConfig: Linter.Config = {
   extends: [
     "eslint:recommended",
-    "plugin:vue/vue3-essential",
+    "plugin:vue/vue3-recommended",
     "@vue/eslint-config-typescript/recommended",
     "@vue/eslint-config-prettier",
   ],
@@ -15,4 +13,4 @@ const eslintConfig: defineEslintConfig = {
   },
 };
 
-module.exports = eslintConfig;
+export default eslintConfig;

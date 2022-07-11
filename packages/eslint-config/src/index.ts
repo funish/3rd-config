@@ -1,8 +1,6 @@
 import { Linter } from "eslint";
 
-export type defineEslintConfig = Linter.Config;
-
-const eslintConfig: defineEslintConfig = {
+const eslintConfig: Linter.Config = {
   env: {
     browser: true,
     es2021: true,
@@ -21,4 +19,4 @@ const eslintConfig: defineEslintConfig = {
   plugins: ["@typescript-eslint"],
 };
 
-module.exports = eslintConfig;
+export default eslintConfig;

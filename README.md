@@ -18,5 +18,4 @@ Includes ESLint configuration, Stylelint configuration, and the yet-to-be-develo
 
 ## License
 
-- Code - [MIT](LICENSE) &copy; [Funish](https://funish.net/)
-- Documentation - [CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) &copy; [Funish](https://funish.net/)
+[MIT](LICENSE) &copy; [Funish](https://funish.net/)

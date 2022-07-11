@@ -1,7 +1,7 @@
 {
-  "name": "@funish/eslint-config-vue",
-  "version": "0.0.3",
-  "description": "Shared eslint configuration specifically for vue, powered by Funish.",
+  "name": "@funish/eslint-config-stencil",
+  "version": "0.0.0",
+  "description": "Shared eslint configuration specifically for stencil, powered by Funish.",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -19,9 +19,20 @@
     "eslintconfig",
     "eslint-config",
     "typescript",
-    "vue"
+    "stencil"
   ],
-  "author": "",
+  "author": {
+    "name": "Funish",
+    "email": "official@funish.net",
+    "url": "https://funish.net/"
+  },
+  "contributors": [
+    {
+      "name": "Demo Macro",
+      "email": "abc@imst.xyz",
+      "url": "https://imst.xyz/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Funish/lint-module/issues"
@@ -35,11 +46,14 @@
   "peerDependencies": {
     "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <9.0.0",
     "prettier": ">=2.0.0",
-    "typescript": ">=2.8.0"
+    "typescript": ">=4.0.8 <5.0.0"
   },
   "dependencies": {
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^11.0.0",
-    "eslint-plugin-vue": "^9.2.0"
+    "@stencil/eslint-plugin": "^0.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1"
   }
 }
