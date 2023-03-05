@@ -1,0 +1,111 @@
+import { loadLintConfig } from "./config";
+import { git } from "./git";
+import consola from "consola";
+
+export interface commitMsgLintConfigRules {
+  enum?: string[];
+  rules?: string[];
+}
+export interface commitMsgLintConfig {
+  type?: RegExp | commitMsgLintConfigRules;
+  scope?: RegExp | commitMsgLintConfigRules;
+  description?: RegExp | commitMsgLintConfigRules;
+}
+
+export const commitMsgLintConfigDefault = {
+  type: {
+    enum: [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "build",
+      "ci",
+      "chore",
+      "revert",
+      "release",
+      "wip",
+    ],
+    rules: ["lowercase"],
+  },
+  scope: {
+    rules: ["lowercase", "semver"],
+  },
+  description: {
+    rules: ["phrasecase"],
+  },
+};
+
+export const commitMsgLintConfigRulesRegexp = {
+  lowercase: /^[a-z]+$/,
+  uppercase: /^[A-Z]+$/,
+  camelcase: /^[a-z]+([A-Z][a-z]+)*$/,
+  kebabcase: /^[a-z]+(-[a-z]+)*$/,
+  snakecase: /^[a-z]+(_[a-z]+)*$/,
+  pascalcase: /^[A-Z][a-z]+([A-Z][a-z]+)*$/,
+  sentencecase: /^[A-Z][a-z]+$/,
+  phrasecase: /^[a-z]+.+[^.]$/,
+  semver:
+    /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/,
+};
+
+export const commitMsgRaw = git(["log", "-1", "--pretty=%B"]).stdout.toString();
+
+// Commit message format: type(scope)!: description
+export const commitMsgRegexp = new RegExp(
+  "(?<type>.+)(((?<scope>.+)))?(?<breaking>!)?: (?<description>.+)"
+);
+
+export const commitMsg = commitMsgRaw.match(commitMsgRegexp)
+  ?.groups as unknown as Array<string>;
+
+export async function commitMsgLint(config?: commitMsgLintConfig) {
+  const loadCommitMsgLint = config || (await loadLintConfig()).commitMsg;
+
+  if (commitMsgRegexp.test(commitMsgRaw)) {
+    for (const key in loadCommitMsgLint) {
+      if (Object.prototype.hasOwnProperty.call(loadCommitMsgLint, key)) {
+        const element = loadCommitMsgLint[key];
+        if (element instanceof RegExp) {
+          if (!element.test(commitMsg[key])) {
+            consola.error(
+              `Commit message ${key} does not match the regular expression ${element}.`
+            );
+            process.exit(1);
+          }
+        } else if (Array.isArray(element)) {
+          if (!element.includes(commitMsg[key])) {
+            consola.error(
+              `Commit message ${key} does not match the array ${element}.`
+            );
+            process.exit(1);
+          }
+        } else if (typeof element === "object") {
+          if (
+            element.enum &&
+            !element.enum.includes(commitMsg[key]) &&
+            !element.rules.includes(commitMsg[key])
+          ) {
+            consola.error(
+              `Commit message ${key} does not match the enum ${element.enum} or rules ${element.rules}.`
+            );
+            process.exit(1);
+          } else if (element.rules && !element.rules.includes(commitMsg[key])) {
+            consola.error(
+              `Commit message ${key} does not match the rules ${element.rules}.`
+            );
+            process.exit(1);
+          }
+        }
+      }
+    }
+  } else {
+    consola.error(
+      "Commit message does not match the conventional commit format."
+    );
+    process.exit(1);
+  }
+}

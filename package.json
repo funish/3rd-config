@@ -8,14 +8,8 @@
     "lint:js": "eslint . --ext \".js,.jsx,.ts,.tsx,.vue\" --ignore-path .gitignore",
     "lint:style": "stylelint \"**/*.{css,sass,scss,html,vue,md}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check . --ignore-path .gitignore",
-    "lint": "pnpm lint:js && pnpm lint:style && pnpm lint:prettier",
-    "lintfix": "prettier --write --list-different . --ignore-path .gitignore && pnpm lint:js --fix && pnpm lint:style --fix",
+    "lintfix": "pnpm lint:js --fix && pnpm lint:style --fix && prettier --write . --list-different --ignore-path .gitignore",
     "postinstall": "githooks install"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": "eslint --cache",
-    "*.{css,scss,js,jsx,tsx,html,vue,md}": "stylelint",
-    "*.**": "prettier --check --ignore-unknown"
   },
   "repository": {
     "type": "git",
@@ -48,15 +42,13 @@
   },
   "homepage": "https://github.com/funish/lint-module#readme",
   "devDependencies": {
-    "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "17.4.4",
     "@funish/eslint-config": "workspace:*",
-    "@funish/githooks": "0.0.3",
+    "@funish/githooks": "0.0.4-edge.1",
+    "@funish/lint": "workspace:*",
     "@funish/stylelint-config": "workspace:*",
     "@types/eslint": "8.21.1",
     "@types/node": "18.14.1",
     "eslint": "8.34.0",
-    "lint-staged": "13.1.2",
     "stylelint": "15.2.0",
     "unbuild": "1.1.2"
   }

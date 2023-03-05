@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "Integrated one-click Linter, powered by Funish.",
   "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bin": {
-    "lint": "bin/lint.mjs"
+    "lint": "dist/cli.mjs"
   },
   "scripts": {
     "prepack": "unbuild"
@@ -43,7 +44,13 @@
   },
   "homepage": "https://github.com/funish/lint-module#readme",
   "dependencies": {
-    "cac": "^6.7.14",
-    "consola": "^2.15.3"
+    "c12": "1.1.2",
+    "cac": "6.7.14",
+    "consola": "2.15.3",
+    "micromatch": "4.0.5",
+    "pkg-types": "1.0.2"
+  },
+  "devDependencies": {
+    "@types/micromatch": "4.0.2"
   }
 }

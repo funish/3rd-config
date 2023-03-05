@@ -1,14 +1,29 @@
 import cac from "cac";
 import consola from "consola";
-import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { readPackageJSON } from "pkg-types";
+import { commitMsgLint } from "./commit-msg";
+import { stagedLint } from "./staged";
 
-const cli = cac("hooks");
-const { version } = JSON.parse(readFileSync("package.json", "utf8"));
+const cli = cac("lint");
+const pkg = await readPackageJSON(
+  fileURLToPath(new URL("../", import.meta.url))
+);
+const version = pkg.version as string;
 
 // Listen to unknown commands
 cli.on("command:*", () => {
   consola.error("Invalid command: %s", cli.args.join(" "));
   process.exit(1);
+});
+
+// Register commands
+cli.command("commit-msg", "Lint commit message").action(() => {
+  commitMsgLint();
+});
+
+cli.command("staged", "Lint staged files").action(() => {
+  stagedLint();
 });
 
 // Display help message when `-h` or `--help` appears
