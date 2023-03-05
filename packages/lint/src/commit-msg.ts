@@ -1,6 +1,6 @@
 import { loadLintConfig } from "./config";
-import { git } from "./git";
 import consola from "consola";
+import { readFileSync } from "fs";
 
 export interface commitMsgLintConfigRules {
   enum?: string[];
@@ -52,7 +52,7 @@ export const commitMsgLintConfigRulesRegexp = {
     /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/,
 };
 
-export const commitMsgRaw = git(["log", "-1", "--pretty=%B"]).stdout.toString();
+export const commitMsgRaw = readFileSync(".git/COMMIT_EDITMSG", "utf8");
 
 // Commit message format: type(scope)!: description
 export const commitMsgRegexp = new RegExp(

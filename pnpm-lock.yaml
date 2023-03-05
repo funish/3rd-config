@@ -5,21 +5,27 @@ importers:
     specifiers:
       "@funish/eslint-config": workspace:*
       "@funish/githooks": 0.0.4-edge.1
+      "@funish/githooks-config": 0.0.0
       "@funish/lint": workspace:*
       "@funish/stylelint-config": workspace:*
       "@types/eslint": 8.21.1
       "@types/node": 18.14.1
       eslint: 8.34.0
+      prettier: 2.8.4
+      rome: 11.0.0
       stylelint: 15.2.0
       unbuild: 1.1.2
     devDependencies:
       "@funish/eslint-config": link:packages/eslint-config
       "@funish/githooks": 0.0.4-edge.1
+      "@funish/githooks-config": 0.0.0
       "@funish/lint": link:packages/lint
       "@funish/stylelint-config": link:packages/stylelint-config
       "@types/eslint": 8.21.1
       "@types/node": 18.14.1
       eslint: 8.34.0
+      prettier: 2.8.4
+      rome: 11.0.0
       stylelint: 15.2.0
       unbuild: 1.1.2
 
@@ -724,6 +730,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@funish/githooks-config/0.0.0:
+    resolution:
+      {
+        integrity: sha512-oi6aj2ZsIsKW/bOD0cUyM59mZ9RPCCPfil6Ptw8GHR8Jb8s2FlBfN2qxJpYGP4Ktn1zKEgVqUN7Z1OfZHMpTUQ==,
+      }
+    dev: true
+
   /@funish/githooks/0.0.4-edge.1:
     resolution:
       {
@@ -958,6 +971,72 @@ packages:
       picomatch: 2.3.1
       rollup: 3.18.0
     dev: true
+
+  /@rometools/cli-darwin-arm64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-F3vkdY+s3FLIEnAjSbyHTuIPB88cLpccimW4ecid5I7S6GzGG3iUJI4xT00JhH73K4P/qW20/9r+kH1T9Du8Xg==,
+      }
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rometools/cli-darwin-x64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-X6jhtS6Iml4GOzgNtnLwIp/KXXhSdqeVyfv69m/AHnIzx3gQAjPZ7BPnJLvTCbhe4SKHL+uTZYFSCJpkUUKE6w==,
+      }
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rometools/cli-linux-arm64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-dktTJJlTpmycBZ2TwhJBcAO8ztK8DdevdyZnFFxdYRvtmJgTjIsC2UFayf/SbKew8B8q1IhI0it+D6ihAeIpeg==,
+      }
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rometools/cli-linux-x64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-WVcnXPNdWGUWo0p4NU8YzuthjYR7q+b4vRcjdxtP1DlpphZmSsoC/RSE85nEqRAz8hChcKUansVzOPM8BSsuGA==,
+      }
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rometools/cli-win32-arm64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-tPj6RThQzS7Q45jqQll7NlTYvNcsg/BEP3LYiiazqSh9FAFnMkrV6ewUcMPKWyAfiyLs7jlz4rRvdNRUSygzfQ==,
+      }
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rometools/cli-win32-x64/11.0.0:
+    resolution:
+      {
+        integrity: sha512-bmBai8WHxYjsGk1+je7ZTfCUCWq30WJI3pQM8pzTA674lfGTZ9ymJoZwTaIMSO4rL5V9mlO6uLunsBKso9VqOg==,
+      }
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@stencil-community/eslint-plugin/0.5.0_6bedcscm4w5xgac45mrtxtuq5u:
     resolution:
@@ -4197,6 +4276,23 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /rome/11.0.0:
+    resolution:
+      {
+        integrity: sha512-rRo6JOwpMLc3OkeTDRXkrmrDqnxDvZ75GS4f0jLDBNmRgDXWbu0F8eVnJoRn+VbK2AE7vWvhVOMBjnWowcopkQ==,
+      }
+    engines: { node: ">=14.*" }
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      "@rometools/cli-darwin-arm64": 11.0.0
+      "@rometools/cli-darwin-x64": 11.0.0
+      "@rometools/cli-linux-arm64": 11.0.0
+      "@rometools/cli-linux-x64": 11.0.0
+      "@rometools/cli-win32-arm64": 11.0.0
+      "@rometools/cli-win32-x64": 11.0.0
     dev: true
 
   /run-parallel/1.2.0:

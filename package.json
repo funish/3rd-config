@@ -5,10 +5,9 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r prepack",
-    "lint:js": "eslint . --ext \".js,.jsx,.ts,.tsx,.vue\" --ignore-path .gitignore",
-    "lint:style": "stylelint \"**/*.{css,sass,scss,html,vue,md}\" --ignore-path .gitignore",
+    "lint:js": "rome check .",
     "lint:prettier": "prettier --check . --ignore-path .gitignore",
-    "lintfix": "pnpm lint:js --fix && pnpm lint:style --fix && prettier --write . --list-different --ignore-path .gitignore",
+    "lintfix": "prettier --write --list-different . --ignore-path .gitignore && rome check . --apply-suggested",
     "postinstall": "githooks install"
   },
   "repository": {
@@ -44,11 +43,14 @@
   "devDependencies": {
     "@funish/eslint-config": "workspace:*",
     "@funish/githooks": "0.0.4-edge.1",
+    "@funish/githooks-config": "0.0.0",
     "@funish/lint": "workspace:*",
     "@funish/stylelint-config": "workspace:*",
     "@types/eslint": "8.21.1",
     "@types/node": "18.14.1",
     "eslint": "8.34.0",
+    "prettier": "2.8.4",
+    "rome": "11.0.0",
     "stylelint": "15.2.0",
     "unbuild": "1.1.2"
   }
