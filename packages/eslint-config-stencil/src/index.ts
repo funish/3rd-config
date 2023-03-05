@@ -3,7 +3,7 @@ import { Linter } from "eslint";
 const eslintConfig: Linter.Config = {
   extends: [
     "eslint:recommended",
-    "plugin:@stencil/recommended",
+    "@stencil-community/recommended",
     "plugin:prettier/recommended",
   ],
 };
