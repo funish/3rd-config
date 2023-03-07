@@ -42,8 +42,8 @@
   "homepage": "https://github.com/funish/lint-module#readme",
   "devDependencies": {
     "@funish/eslint-config": "workspace:*",
-    "@funish/githooks": "0.0.4-edge.1",
-    "@funish/githooks-config": "0.0.0",
+    "@funish/githooks": "edge",
+    "@funish/githooks-config": "edge",
     "@funish/lint": "workspace:*",
     "@funish/stylelint-config": "workspace:*",
     "@types/eslint": "8.21.1",

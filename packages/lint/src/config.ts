@@ -12,7 +12,34 @@ export function defineLintConfig(config: LintConfig) {
   return config;
 }
 
-const ConfigDefaults = defineLintConfig({});
+const ConfigDefaults = defineLintConfig({
+  commitMsg: {
+    type: {
+      enum: [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "build",
+        "ci",
+        "chore",
+        "revert",
+        "release",
+        "wip",
+      ],
+      rules: ["lowercase"],
+    },
+    scope: {
+      rules: ["lowercase"],
+    },
+    description: {
+      rules: ["phrasecase"],
+    },
+  },
+});
 
 export async function loadLintConfig(
   cwd?: string,

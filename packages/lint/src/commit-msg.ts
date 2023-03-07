@@ -6,38 +6,12 @@ export interface commitMsgLintConfigRules {
   enum?: string[];
   rules?: string[];
 }
+
 export interface commitMsgLintConfig {
   type?: RegExp | commitMsgLintConfigRules;
   scope?: RegExp | commitMsgLintConfigRules;
   description?: RegExp | commitMsgLintConfigRules;
 }
-
-export const commitMsgLintConfigDefault = {
-  type: {
-    enum: [
-      "feat",
-      "fix",
-      "docs",
-      "style",
-      "refactor",
-      "perf",
-      "test",
-      "build",
-      "ci",
-      "chore",
-      "revert",
-      "release",
-      "wip",
-    ],
-    rules: ["lowercase"],
-  },
-  scope: {
-    rules: ["lowercase", "semver"],
-  },
-  description: {
-    rules: ["phrasecase"],
-  },
-};
 
 export const commitMsgLintConfigRulesRegexp = {
   lowercase: /^[a-z]+$/,
@@ -76,26 +50,26 @@ export async function commitMsgLint(config?: commitMsgLintConfig) {
             );
             process.exit(1);
           }
-        } else if (Array.isArray(element)) {
-          if (!element.includes(commitMsg[key])) {
-            consola.error(
-              `Commit message ${key} does not match the array ${element}.`
-            );
-            process.exit(1);
-          }
         } else if (typeof element === "object") {
-          if (
-            element.enum &&
-            !element.enum.includes(commitMsg[key]) &&
-            !element.rules.includes(commitMsg[key])
-          ) {
+          if (element.enum) {
+            if (!element.enum.includes(commitMsg[key])) {
+              consola.error(
+                `Commit message ${key} does not match the enum ${element.enum}.`
+              );
+              process.exit(1);
+            }
+          } else if (element.rules) {
+            for (const rule of element.rules) {
+              if (!commitMsgLintConfigRulesRegexp[rule].test(commitMsg[key])) {
+                consola.error(
+                  `Commit message ${key} does not match the rule ${rule}.`
+                );
+                process.exit(1);
+              }
+            }
+          } else {
             consola.error(
-              `Commit message ${key} does not match the enum ${element.enum} or rules ${element.rules}.`
-            );
-            process.exit(1);
-          } else if (element.rules && !element.rules.includes(commitMsg[key])) {
-            consola.error(
-              `Commit message ${key} does not match the rules ${element.rules}.`
+              "Commit message does not match the conventional commit format."
             );
             process.exit(1);
           }
