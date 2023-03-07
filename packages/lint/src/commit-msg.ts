@@ -29,9 +29,8 @@ export const commitMsgLintConfigRulesRegexp = {
 export const commitMsgRaw = readFileSync(".git/COMMIT_EDITMSG", "utf8");
 
 // Commit message format: type(scope)!: description
-export const commitMsgRegexp = new RegExp(
-  "(?<type>.+)((?<scope>.+)?)(?<breaking>!)?: (?<description>.+)"
-);
+export const commitMsgRegexp =
+  /(?<type>.+)\((?<scope>.+)?\)(?<breaking>!)?: (?<description>.+)/;
 
 export const commitMsg = commitMsgRaw.match(commitMsgRegexp)
   ?.groups as unknown as Array<string>;
