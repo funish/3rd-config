@@ -5,9 +5,8 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r prepack",
-    "lint:js": "rome check .",
-    "lint:prettier": "prettier --check . --ignore-path .gitignore",
-    "lintfix": "prettier --write --list-different . --ignore-path .gitignore && rome check . --apply-suggested",
+    "check": "rome check . --apply-suggested && pnpm rome format . --write",
+    "format": "prettier --write --list-different . --ignore-path .gitignore",
     "postinstall": "githooks install"
   },
   "repository": {
@@ -28,13 +27,6 @@
     "email": "official@funish.net",
     "url": "https://funish.net/"
   },
-  "contributors": [
-    {
-      "name": "Demo Macro",
-      "email": "abc@imst.xyz",
-      "url": "https://imst.xyz/"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/funish/lint-module/issues"

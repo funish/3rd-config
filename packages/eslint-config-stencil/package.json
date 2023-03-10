@@ -26,13 +26,6 @@
     "email": "official@funish.net",
     "url": "https://funish.net/"
   },
-  "contributors": [
-    {
-      "name": "Demo Macro",
-      "email": "abc@imst.xyz",
-      "url": "https://imst.xyz/"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/funish/lint-module/issues"
