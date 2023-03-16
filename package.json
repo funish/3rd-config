@@ -7,7 +7,7 @@
     "build": "pnpm -r prepack",
     "check": "rome check . --apply-suggested && pnpm rome format . --write",
     "format": "prettier --write --list-different . --ignore-path .gitignore",
-    "postinstall": "githooks install"
+    "postinstall": "pnpm build && githooks install"
   },
   "repository": {
     "type": "git",

@@ -33,7 +33,7 @@ export const commitMsgRaw = existsSync(".git/COMMIT_EDITMSG")
 
 // Commit message format: type(scope)!: description
 export const commitMsgRegexp =
-  /(?<type>.+)(\((?<scope>.+)\))?(?<breaking>!)?: (?<description>.+)/;
+  /(?<type>\w+)(\((?<scope>.+)\))?(?<breaking>!)?: (?<description>.+)/;
 
 export const commitMsg = commitMsgRaw.match(commitMsgRegexp)
   ?.groups as unknown as Array<string>;
