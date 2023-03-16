@@ -23,17 +23,14 @@ export async function stagedLint(config?: stagedLintConfig) {
   const loadStagedLintConfig = config || (await loadLintConfig()).staged;
 
   const files = stagedFiles.stdout.toString().split("\n");
+
   for (const key in loadStagedLintConfig) {
-    const isMatched = false;
     for (const file of files) {
       if (micromatch.isMatch(basename(file), key)) {
         execSync(loadStagedLintConfig[key], { stdio: "inherit" });
+        git(["add", "."]);
         break;
       }
-    }
-    if (isMatched) {
-      // rome-ignore lint/correctness/noUnnecessaryContinue: <explanation>
-      continue;
     }
   }
 }
