@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r prepack",
-    "check": "rome check . --apply-suggested && pnpm rome format . --write",
+    "check": "rome check . --apply-suggested && rome format . --write",
     "format": "prettier --write --list-different . --ignore-path .gitignore",
     "postinstall": "pnpm build && githooks install"
   },

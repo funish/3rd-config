@@ -1,6 +1,6 @@
 {
   "name": "@funish/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shared eslint configuration, powered by Funish.",
   "main": "dist/index.js",
   "files": [

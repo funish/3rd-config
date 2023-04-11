@@ -1,6 +1,6 @@
 {
   "name": "@funish/eslint-config-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shared eslint configuration specifically for vue, powered by Funish.",
   "main": "dist/index.js",
   "files": [

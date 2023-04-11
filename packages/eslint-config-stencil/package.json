@@ -1,6 +1,6 @@
 {
   "name": "@funish/eslint-config-stencil",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Shared eslint configuration specifically for stencil, powered by Funish.",
   "main": "dist/index.js",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "@funish/stylelint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shared stylelint configuration, powered by Funish.",
   "main": "dist/index.js",
   "files": [
