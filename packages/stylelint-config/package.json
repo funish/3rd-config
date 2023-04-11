@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/funish/lint-module.git"
+    "url": "git+https://github.com/funish/3rd-config.git"
   },
   "keywords": [
     "lint",
@@ -26,13 +26,13 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/funish/lint-module/issues"
+    "url": "https://github.com/funish/3rd-config/issues"
   },
-  "homepage": "https://github.com/funish/lint-module#readme",
+  "homepage": "https://github.com/funish/3rd-config#readme",
   "devDependencies": {
     "postcss": "8.4.21",
-    "prettier": "2.8.4",
-    "stylelint": "15.2.0"
+    "prettier": "2.8.7",
+    "stylelint": "15.4.0"
   },
   "peerDependencies": {
     "postcss": ">=0.36.2",
@@ -44,7 +44,7 @@
     "postcss-markdown": "1.2.0",
     "postcss-scss": "4.0.6",
     "stylelint-config-prettier": "9.0.5",
-    "stylelint-config-standard": "30.0.1",
+    "stylelint-config-standard": "32.0.0",
     "stylelint-prettier": "3.0.0"
   }
 }

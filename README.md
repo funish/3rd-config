@@ -1,6 +1,6 @@
 # Funish Lint Toolchain
 
-![GitHub](https://img.shields.io/github/license/funish/lint-module)
+![GitHub](https://img.shields.io/github/license/funish/3rd-config)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
 
 > The Lint tool chain designed for specification, powered by Funish.

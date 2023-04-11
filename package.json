@@ -1,7 +1,7 @@
 {
-  "name": "@funish/lint-module",
+  "name": "@funish/3rd-config",
   "version": "0.0.0",
-  "description": "The Lint tool chain designed for specification, powered by Funish.",
+  "description": "Third party lint tools configuration, powered by Funish.",
   "private": true,
   "scripts": {
     "build": "pnpm -r prepack",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/funish/lint-module.git"
+    "url": "https://github.com/funish/3rd-config.git"
   },
   "keywords": [
     "lint",
@@ -29,14 +29,14 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/funish/lint-module/issues"
+    "url": "https://github.com/funish/3rd-config/issues"
   },
-  "homepage": "https://github.com/funish/lint-module#readme",
+  "homepage": "https://github.com/funish/3rd-config#readme",
   "devDependencies": {
     "@funish/eslint-config": "workspace:*",
     "@funish/githooks": "edge",
     "@funish/githooks-config": "edge",
-    "@funish/lint": "workspace:*",
+    "@funish/lint": "edge",
     "@funish/stylelint-config": "workspace:*",
     "@types/eslint": "8.21.1",
     "@types/node": "18.14.1",
