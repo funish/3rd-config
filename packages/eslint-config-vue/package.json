@@ -40,6 +40,6 @@
   "dependencies": {
     "@vue/eslint-config-prettier": "7.1.0",
     "@vue/eslint-config-typescript": "11.0.2",
-    "eslint-plugin-vue": "9.9.0"
+    "eslint-plugin-vue": "9.17.0"
   }
 }
