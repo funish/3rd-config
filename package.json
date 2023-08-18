@@ -43,7 +43,7 @@
     "eslint": "8.34.0",
     "prettier": "2.8.4",
     "rome": "11.0.0",
-    "stylelint": "15.2.0",
+    "stylelint": "15.10.3",
     "unbuild": "1.1.2"
   }
 }
