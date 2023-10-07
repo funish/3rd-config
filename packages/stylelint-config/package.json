@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/funish/3rd-config#readme",
   "devDependencies": {
-    "postcss": "8.4.30",
+    "postcss": "8.4.31",
     "prettier": "3.0.3",
     "stylelint": "15.10.3"
   },
