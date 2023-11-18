@@ -39,7 +39,7 @@
     "@funish/lint": "edge",
     "@funish/stylelint-config": "workspace:*",
     "@types/eslint": "8.44.6",
-    "@types/node": "20.9.0",
+    "@types/node": "20.9.2",
     "eslint": "8.52.0",
     "prettier": "3.0.3",
     "rome": "12.1.3",
