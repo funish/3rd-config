@@ -33,7 +33,7 @@
   "devDependencies": {
     "postcss": "8.4.32",
     "prettier": "3.1.0",
-    "stylelint": "15.10.3"
+    "stylelint": "15.11.0"
   },
   "peerDependencies": {
     "postcss": ">=0.36.2",
