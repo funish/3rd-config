@@ -33,12 +33,12 @@
   },
   "homepage": "https://github.com/funish/3rd-config#readme",
   "devDependencies": {
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "prettier": "3.2.5",
     "typescript": "5.4.5"
   },
   "peerDependencies": {
-    "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <9.0.0",
+    "eslint": ">=7.28.0 <8.0.0 || >=8.0.0 <10.0.0",
     "prettier": ">=2.0.0",
     "typescript": ">=4.0.8"
   },
